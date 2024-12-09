@@ -1,0 +1,30 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Editor and IDE configuration files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node.js-related files (if you use npm for tooling or packaging)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build files (if applicable)
+dist/
+build/
+
+# VSCode-specific workspace settings
+*.code-workspace
+
+# Exclude personal VSCode settings
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
