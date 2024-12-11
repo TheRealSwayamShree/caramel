@@ -45,31 +45,51 @@ def generate_stacked_palette(light_palette, dark_palette, filename):
     ax.axis('off')
 
     # Titles for each row (placed outside plotting region)
-    fig.text(0.5, 0.8, "Caramel Light Palette", ha="center", va="center", fontsize=16, weight="bold", color="black")
-    fig.text(0.5, 0.47, "Caramel Dark Palette", ha="center", va="center", fontsize=16, weight="bold", color="black")
+    fig.text(0.5, 0.8, "Caramel Light Palette", ha="center", va="center", fontsize=16, weight="bold", color="black", fontfamily="Arial")
+    fig.text(0.5, 0.47, "Caramel Dark Palette", ha="center", va="center", fontsize=16, weight="bold", color="black", fontfamily="Arial")
 
     # Draw the light palette (top row)
     for i, (name, color) in enumerate(light_palette.items()):
         x = i  # Position along the horizontal axis
+        display_name = name.replace("Bright ", "Bright\n") if "Bright" in name else name
         ax.add_patch(plt.Rectangle((x, 1.5), 1, 1, color=color, ec="white", lw=2))  # Add white border
         ax.text(
-            x + 0.5, 2,
-            f"{name}\n{color}",
+            x + 0.5, 2.1,
+            display_name,
             ha="center", va="center",
-            fontsize=8,
-            color="white" if color in ["#3B302C"] else "black"
+            fontsize=8, weight="bold",
+            color="white" if color in ["#3B302C", "#6D5E55"] else "black",
+            fontfamily="Arial"
+        )
+        ax.text(
+            x + 0.5, 1.9,
+            f"{color}",
+            ha="center", va="center",
+            fontsize=8, weight="bold",
+            color="white" if color in ["#3B302C", "#6D5E55"] else "black",
+            fontfamily="Arial"
         )
 
     # Draw the dark palette (bottom row)
     for i, (name, color) in enumerate(dark_palette.items()):
         x = i  # Position along the horizontal axis
+        display_name = name.replace("Bright ", "Bright\n") if "Bright" in name else name
         ax.add_patch(plt.Rectangle((x, 0), 1, 1, color=color, ec="white", lw=2))  # Add white border
         ax.text(
-            x + 0.5, 0.5,
-            f"{name}\n{color}",
+            x + 0.5, 0.6,
+            display_name,
             ha="center", va="center",
-            fontsize=8,
-            color="white" if color in ["#2B1B17", "#5E4B42"] else "black"
+            fontsize=8, weight="bold",
+            color="white" if color in ["#2B1B17", "#5E4B42"] else "black",
+            fontfamily="Arial"
+        )
+        ax.text(
+            x + 0.5, 0.4,
+            f"{color}",
+            ha="center", va="center",
+            fontsize=8, weight="bold",
+            color="white" if color in ["#2B1B17", "#5E4B42"] else "black",
+            fontfamily="Arial"
         )
 
     ax.set_xlim(0, 16)  # Ensure 16 slots horizontally
