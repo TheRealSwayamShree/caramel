@@ -94,7 +94,7 @@ def generate_stacked_palette(light_palette, dark_palette, filename):
 
     ax.set_xlim(0, 16)  # Ensure 16 slots horizontally
     ax.set_ylim(-0.5, 3)  # Adjust height to ensure spacing
-    plt.savefig(f"../images/{filename}", bbox_inches="tight", dpi=300)
+    plt.savefig(f"../palette/{filename}", bbox_inches="tight", dpi=300)
     plt.close()
 
 # Generate the stacked palette image
