@@ -3,18 +3,10 @@
 The Caramel repository hosts a meticulously designed color scheme that draws inspiration from warm, earthy tones. It combines soft, muted accents with harmonious contrasts to create a visually appealing and functional palette for diverse applications. The Caramel color scheme is thoughtfully designed to align with WCAG (Web Content Accessibility Guidelines) standards, ensuring optimal readability and usability. By analyzing contrast ratios, the theme prioritizes accessibility, making it suitable for users with visual impairments and environments with varying lighting conditions. The theme includes both light and dark variants, making it ideal for various applications that demand readability, aesthetics, and accessibility.
 
 ## Palette
-[]
-## Repository Structure
-
-```
-│   .gitignore
-│   LICENSE
-│   README.md
-│   color_codes/
-│   palette/
-│   src/
-```
-
+- **Caramel Light Palette**:
+  - ![Caramel Light Palette](palette/caramel_light_grid.png)
+- **Caramel Dark Palette**:
+  - ![Caramel Dark Palette](palette/caramel_dark_grid.png)
 ### Folder Descriptions
 
 - **`color_codes/`**: Contains CSV files detailing contrast ratios for both light and dark themes across various WCAG thresholds.
@@ -33,20 +25,32 @@ CSV files in the `color_codes/` folder store these pairwise contrast ratios.
 
 ### 2. **Visual Representations**
 The `palette/` folder hosts:
-- **Contrast Matrices**: Comprehensive contrast ratio matrices for light and dark themes.
-  - ![Caramel Light Contrast Matrix](palette/caramel_light_contrast.png)
-  - ![Caramel Dark Contrast Matrix](palette/caramel_dark_contrast.png)
+- **Contrast Matrices**: Comprehensive contrast ratio matrices for light and dark themes. These matrices display the pairwise contrast ratios of all colors in the palette, adhering to WCAG standards for accessibility.
+  <p align="center">
+    <img src="palette/caramel_light_contrast.png" alt="Caramel Light Contrast Matrix" width="45%" style="margin-right: 20px;">
+    <img src="palette/caramel_dark_contrast.png" alt="Caramel Dark Contrast Matrix" width="45%">
+  </p>
 
 - **Contrast Pair Plots**: Bar plots visualizing contrast pairs exceeding specified thresholds.
-  - **Caramel Light**
-    - ![3.1:1 Threshold](palette/caramel_light_contrast_pairs_plot_3.11.png)
-    - ![4.5:1 Threshold](palette/caramel_light_contrast_pairs_plot_4.51.png)
-    - ![7:1 Threshold](palette/caramel_light_contrast_pairs_plot_71.png)
 
-  - **Caramel Dark**
-    - ![3.1:1 Threshold](palette/caramel_dark_contrast_pairs_plot_3.11.png)
-    - ![4.5:1 Threshold](palette/caramel_dark_contrast_pairs_plot_4.51.png)
-    - ![7:1 Threshold](palette/caramel_dark_contrast_pairs_plot_71.png)
+  <p align="center"><b>Threshold 3.1:1</b>: Suitable for large text and non-text elements, ensuring minimal contrast for visual distinction.</p>
+  <p align="center">
+    <img src="palette/caramel_light_contrast_pairs_plot_3.11.png" alt="Caramel Light 3.1:1 Threshold" width="45%" style="margin-right: 20px;">
+    <img src="palette/caramel_dark_contrast_pairs_plot_3.11.png" alt="Caramel Dark 3.1:1 Threshold" width="45%">
+  </p>
+<br><br>
+  <p align="center"><b>Threshold 4.5:1</b>: The minimum contrast ratio recommended for normal text readability.</p>
+  <p align="center">
+    <img src="palette/caramel_light_contrast_pairs_plot_4.51.png" alt="Caramel Light 4.5:1 Threshold" width="45%" style="margin-right: 20px;">
+    <img src="palette/caramel_dark_contrast_pairs_plot_4.51.png" alt="Caramel Dark 4.5:1 Threshold" width="45%">
+  </p>
+<br><br>
+  <p align="center"><b>Threshold 7:1</b>: Ideal for enhanced readability and maximum accessibility.</p>
+  <p align="center">
+    <img src="palette/caramel_light_contrast_pairs_plot_71.png" alt="Caramel Light 7:1 Threshold" width="45%" style="margin-right: 20px;">
+    <img src="palette/caramel_dark_contrast_pairs_plot_71.png" alt="Caramel Dark 7:1 Threshold" width="45%">
+  </p>
+<br><br>
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
@@ -56,3 +60,4 @@ At this time, I am not accepting contributions. However, feel free to fork the r
 
 ## Contact
 For questions or feedback, reach out to the project maintainers via the GitHub repository.
+
