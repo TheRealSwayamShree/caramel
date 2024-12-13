@@ -27,7 +27,9 @@ CSV files in the `color_codes/` folder store these pairwise contrast ratios.
 The `palette/` folder hosts:
 - **Contrast Matrices**: Comprehensive contrast ratio matrices for light and dark themes. These matrices display the pairwise contrast ratios of all colors in the palette, adhering to WCAG standards for accessibility.
   <p align="center">
-    <img src="palette/caramel_light_contrast.png" alt="Caramel Light Contrast Matrix" width="45%" style="margin-right: 20px;">
+    <img src="palette/caramel_light_contrast.png" alt="Caramel Light Contrast Matrix" width="45%">
+  </p>
+  <p align="center">
     <img src="palette/caramel_dark_contrast.png" alt="Caramel Dark Contrast Matrix" width="45%">
   </p>
 
@@ -35,19 +37,25 @@ The `palette/` folder hosts:
 
   <p align="center"><b>Threshold 3.1:1</b>: Suitable for large text and non-text elements, ensuring minimal contrast for visual distinction.</p>
   <p align="center">
-    <img src="palette/caramel_light_contrast_pairs_plot_3.11.png" alt="Caramel Light 3.1:1 Threshold" width="45%" style="margin-right: 20px;">
+    <img src="palette/caramel_light_contrast_pairs_plot_3.11.png" alt="Caramel Light 3.1:1 Threshold" width="45%">
+  </p>
+  <p align="center">
     <img src="palette/caramel_dark_contrast_pairs_plot_3.11.png" alt="Caramel Dark 3.1:1 Threshold" width="45%">
   </p>
 <br><br>
   <p align="center"><b>Threshold 4.5:1</b>: The minimum contrast ratio recommended for normal text readability.</p>
   <p align="center">
-    <img src="palette/caramel_light_contrast_pairs_plot_4.51.png" alt="Caramel Light 4.5:1 Threshold" width="45%" style="margin-right: 20px;">
+    <img src="palette/caramel_light_contrast_pairs_plot_4.51.png" alt="Caramel Light 4.5:1 Threshold" width="45%">
+  </p>
+  <p align="center">
     <img src="palette/caramel_dark_contrast_pairs_plot_4.51.png" alt="Caramel Dark 4.5:1 Threshold" width="45%">
   </p>
 <br><br>
   <p align="center"><b>Threshold 7:1</b>: Ideal for enhanced readability and maximum accessibility.</p>
   <p align="center">
-    <img src="palette/caramel_light_contrast_pairs_plot_71.png" alt="Caramel Light 7:1 Threshold" width="45%" style="margin-right: 20px;">
+    <img src="palette/caramel_light_contrast_pairs_plot_71.png" alt="Caramel Light 7:1 Threshold" width="45%">
+  </p>
+  <p align="center">
     <img src="palette/caramel_dark_contrast_pairs_plot_71.png" alt="Caramel Dark 7:1 Threshold" width="45%">
   </p>
 <br><br>
