@@ -38,6 +38,7 @@ def generate_contrast_matrix(palette):
         for j in range(size):
             contrast_matrix[i, j] = contrast_ratio(rgb_colors[i], rgb_colors[j])
     return contrast_matrix
+
 def save_contrast_matrix_image(matrix, palette, filename, theme_name, background_color):
     """
     Save an image of the contrast matrix with the specified background color and custom colormap.
@@ -104,7 +105,7 @@ def save_contrast_matrix_image(matrix, palette, filename, theme_name, background
     ax.tick_params(which="minor", size=0)
 
     for (i, j), val in np.ndenumerate(matrix):
-        text_color = caramel_light["Black"] if background_color == caramel_light["White"] else caramel_dark["White"]
+        text_color = caramel_light["Black"]
         ax.text(j, i, f"{val:.1f}", ha='center', va='center', color=text_color, fontsize=14, weight='bold')
 
     plt.title(f"Contrast Ratio Matrix - {theme_name}", pad=50, fontsize=24, fontweight='bold', color=caramel_light["Black"] if background_color == caramel_light["White"] else caramel_dark["White"])
