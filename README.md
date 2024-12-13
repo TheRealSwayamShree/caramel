@@ -37,10 +37,10 @@ The `palette/` folder hosts:
 
   <p align="center"><b>Threshold 3.1:1</b>: Suitable for large text and non-text elements, ensuring minimal contrast for visual distinction.</p>
   <p align="center">
-    <img src="palette/caramel_light_contrast_pairs_plot_3.11.png" alt="Caramel Light 3.1:1 Threshold" width="70%">
+    <img src="palette/caramel_light_contrast_pairs_plot_3.11.png" alt="Caramel Light 3.1:1 Threshold" width="90%">
   </p>
   <p align="center">
-    <img src="palette/caramel_dark_contrast_pairs_plot_3.11.png" alt="Caramel Dark 3.1:1 Threshold" width="70%">
+    <img src="palette/caramel_dark_contrast_pairs_plot_3.11.png" alt="Caramel Dark 3.1:1 Threshold" width="90%">
   </p>
 <br><br>
   <p align="center"><b>Threshold 4.5:1</b>: The minimum contrast ratio recommended for normal text readability.</p>
