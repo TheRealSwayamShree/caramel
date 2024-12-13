@@ -30,33 +30,33 @@ The `palette/` folder hosts:
     <img src="palette/caramel_light_contrast.png" alt="Caramel Light Contrast Matrix" width="70%">
   </p>
   <p align="center">
-    <img src="palette/caramel_dark_contrast.png" alt="Caramel Dark Contrast Matrix" width="45%">
+    <img src="palette/caramel_dark_contrast.png" alt="Caramel Dark Contrast Matrix" width="70%">
   </p>
 
 - **Contrast Pair Plots**: Bar plots visualizing contrast pairs exceeding specified thresholds. These plots serve as a valuable guide for designers to select color pairs that meet accessibility standards while ensuring aesthetic harmony. By visualizing contrast ratios for different thresholds, these plots help identify suitable color combinations for text, backgrounds, and UI elements, enhancing readability and user experience.
 
   <p align="center"><b>Threshold 3.1:1</b>: Suitable for large text and non-text elements, ensuring minimal contrast for visual distinction.</p>
   <p align="center">
-    <img src="palette/caramel_light_contrast_pairs_plot_3.11.png" alt="Caramel Light 3.1:1 Threshold" width="45%">
+    <img src="palette/caramel_light_contrast_pairs_plot_3.11.png" alt="Caramel Light 3.1:1 Threshold" width="70%">
   </p>
   <p align="center">
-    <img src="palette/caramel_dark_contrast_pairs_plot_3.11.png" alt="Caramel Dark 3.1:1 Threshold" width="45%">
+    <img src="palette/caramel_dark_contrast_pairs_plot_3.11.png" alt="Caramel Dark 3.1:1 Threshold" width="70%">
   </p>
 <br><br>
   <p align="center"><b>Threshold 4.5:1</b>: The minimum contrast ratio recommended for normal text readability.</p>
   <p align="center">
-    <img src="palette/caramel_light_contrast_pairs_plot_4.51.png" alt="Caramel Light 4.5:1 Threshold" width="45%">
+    <img src="palette/caramel_light_contrast_pairs_plot_4.51.png" alt="Caramel Light 4.5:1 Threshold" width="70%">
   </p>
   <p align="center">
-    <img src="palette/caramel_dark_contrast_pairs_plot_4.51.png" alt="Caramel Dark 4.5:1 Threshold" width="45%">
+    <img src="palette/caramel_dark_contrast_pairs_plot_4.51.png" alt="Caramel Dark 4.5:1 Threshold" width="70%">
   </p>
 <br><br>
   <p align="center"><b>Threshold 7:1</b>: Ideal for enhanced readability and maximum accessibility.</p>
   <p align="center">
-    <img src="palette/caramel_light_contrast_pairs_plot_71.png" alt="Caramel Light 7:1 Threshold" width="45%">
+    <img src="palette/caramel_light_contrast_pairs_plot_71.png" alt="Caramel Light 7:1 Threshold" width="70%">
   </p>
   <p align="center">
-    <img src="palette/caramel_dark_contrast_pairs_plot_71.png" alt="Caramel Dark 7:1 Threshold" width="45%">
+    <img src="palette/caramel_dark_contrast_pairs_plot_71.png" alt="Caramel Dark 7:1 Threshold" width="70%">
   </p>
 <br><br>
 
