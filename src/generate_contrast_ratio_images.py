@@ -1,47 +1,8 @@
-# Caramel Theme Colors
-
-# Define the color palettes for Caramel Light and Caramel Dark
-caramel_light = {
-    "Black": "#3B302C",
-    "Red": "#C85A54",
-    "Green": "#7C9A62",
-    "Yellow": "#D6AA5A",
-    "Blue": "#89A5C7",
-    "Magenta": "#B58696",
-    "Cyan": "#6CA9A6",
-    "White": "#F5F0E6",
-    "Bright Black": "#6D5E55",
-    "Bright Red": "#D3756D",
-    "Bright Green": "#98B27D",
-    "Bright Yellow": "#E2BC76",
-    "Bright Blue": "#A3BDD3",
-    "Bright Magenta": "#C79DA6",
-    "Bright Cyan": "#8ABBB8",
-    "Bright White": "#FFFFFF"
-}
-
-caramel_dark = {
-    "Black": "#2B1B17",
-    "Red": "#C06D57",
-    "Green": "#9AA86C",
-    "Yellow": "#D6A259",
-    "Blue": "#7998A9",
-    "Magenta": "#AB6B76",
-    "Cyan": "#5C9B9A",
-    "White": "#D4C7BD",
-    "Bright Black": "#5E4B42",
-    "Bright Red": "#CF846D",
-    "Bright Green": "#AEB87E",
-    "Bright Yellow": "#E6B97D",
-    "Bright Blue": "#9FB4C2",
-    "Bright Magenta": "#BC8994",
-    "Bright Cyan": "#76ADA9",
-    "Bright White": "#E9DED3"
-}
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from caramel_colors import caramel_light, caramel_dark  # Import palettes from caramel_colors.py
+from matplotlib.colors import LinearSegmentedColormap
 
 def hex_to_rgb(hex_color):
     """Convert a hex color to an RGB tuple."""
@@ -75,18 +36,62 @@ def generate_contrast_matrix(palette):
             contrast_matrix[i, j] = contrast_ratio(rgb_colors[i], rgb_colors[j])
     return contrast_matrix
 
-def save_contrast_matrix_image(matrix, palette, filename, theme_name):
-    """Save an image of the contrast matrix with white grid lines excluding the edges of the matrix."""
-    fig, ax = plt.subplots(figsize=(15, 15))  # Further increased image size
-    cax = ax.matshow(matrix, cmap="viridis")
+def save_contrast_matrix_image(matrix, palette, filename, theme_name, background_color):
+    """
+    Save an image of the contrast matrix with the specified background color and custom colormap.
+    
+    Parameters:
+        matrix (numpy.ndarray): The contrast ratio matrix.
+        palette (dict): The color palette.
+        filename (str): Output filename for the image.
+        theme_name (str): Name of the theme.
+        background_color (str): Background color of the image.
+    """
+    # Custom colormap for light and dark themes
+    if background_color == caramel_light["White"]:
+        colormap = LinearSegmentedColormap.from_list(
+            "light_theme_cmap",
+            [caramel_light["Bright Black"], caramel_light["Bright Blue"], caramel_light["Bright White"]]
+        )
+    elif background_color == caramel_dark["Black"]:
+        colormap = LinearSegmentedColormap.from_list(
+            "dark_theme_cmap",
+            [caramel_dark["Bright Black"], caramel_dark["Bright Blue"], caramel_dark["Bright White"]]
+        )
+    else:
+        colormap = "viridis"  # Default colormap for other themes
+
+    fig, ax = plt.subplots(figsize=(15, 15))
+    fig.patch.set_facecolor(background_color)
+
+    if background_color == caramel_light["White"]:
+        # Set bounding box color and thickness for light variant
+        for spine in ax.spines.values():
+            spine.set_edgecolor(caramel_dark["Bright Black"])
+            spine.set_linewidth(2)
+    elif background_color == caramel_dark["Black"]:
+        # Set bounding box color and thickness for dark variant
+        for spine in ax.spines.values():
+            spine.set_edgecolor(caramel_light["White"])
+            spine.set_linewidth(2)
+    
+    cax = ax.matshow(matrix, cmap=colormap)
     cbar = fig.colorbar(cax, fraction=0.046, pad=0.04)
-    cbar.ax.set_ylabel("Contrast Ratio", rotation=270, labelpad=30, fontsize=20)  # Larger font size for the cbar label
-    cbar.ax.tick_params(labelsize=16)  # Larger font size for the cbar numbers
+
+    if background_color == caramel_light["White"]:
+        cbar.outline.set_edgecolor(caramel_dark["Bright Black"])
+        cbar.outline.set_linewidth(2)
+    elif background_color == caramel_dark["Black"]:
+        cbar.outline.set_edgecolor(caramel_light["White"])
+        cbar.outline.set_linewidth(2)
+
+    cbar.ax.set_ylabel("Contrast Ratio", rotation=270, labelpad=30, fontsize=20, color=caramel_light["Black"] if background_color == caramel_light["White"] else caramel_dark["White"])  # Larger font size for the cbar label
+    cbar.ax.tick_params(labelsize=16, colors=caramel_light["Black"] if background_color == caramel_light["White"] else caramel_dark["White"])  # Larger font size for the cbar numbers
 
     ax.set_xticks(range(len(palette)))
     ax.set_yticks(range(len(palette)))
-    ax.set_xticklabels(palette.keys(), rotation=45, ha="left", fontsize=16)  # Larger font size for color names
-    ax.set_yticklabels(palette.keys(), fontsize=16)  # Larger font size for color names
+    ax.set_xticklabels(palette.keys(), rotation=45, ha="left", fontsize=16, color=caramel_light["Black"] if background_color == caramel_light["White"] else caramel_dark["White"])  # Larger font size for color names
+    ax.set_yticklabels(palette.keys(), fontsize=16, color=caramel_light["Black"] if background_color == caramel_light["White"] else caramel_dark["White"])  # Larger font size for color names
 
     ax.set_xticks(np.arange(0.5, len(palette), 1), minor=True)
     ax.set_yticks(np.arange(0.5, len(palette), 1), minor=True)
@@ -94,11 +99,12 @@ def save_contrast_matrix_image(matrix, palette, filename, theme_name):
     ax.tick_params(which="minor", size=0)
 
     for (i, j), val in np.ndenumerate(matrix):
-        ax.text(j, i, f"{val:.1f}", ha='center', va='center', color="white", fontsize=14)  # Larger font size for values
+        text_color = caramel_light["Black"]
+        ax.text(j, i, f"{val:.1f}", ha='center', va='center', color=text_color, fontsize=14, weight='bold')  # Larger font size for values
 
-    plt.title(f"Contrast Ratio Matrix - {theme_name}", pad=50, fontsize=24)  # Larger title font size with theme name
+    plt.title(f"Contrast Ratio Matrix - {theme_name}", pad=50, fontsize=24, color=caramel_light["Black"] if background_color == caramel_light["White"] else caramel_dark["White"])  # Larger title font size with theme name
     plt.tight_layout()
-    plt.savefig(f"../palette/{filename}")
+    plt.savefig(f"../palette/{filename}", facecolor=fig.get_facecolor())  # Ensure background color is saved
     plt.close()
 
 def extract_contrast_pairs(matrix, labels, thresholds):
@@ -169,9 +175,13 @@ def plot_contrast_pairs(pairs_dict, theme_name):
 light_contrast_matrix = generate_contrast_matrix(caramel_light)
 dark_contrast_matrix = generate_contrast_matrix(caramel_dark)
 
-# Save images of contrast matrices
-save_contrast_matrix_image(light_contrast_matrix, caramel_light, "caramel_light_contrast.png", "Caramel Light")
-save_contrast_matrix_image(dark_contrast_matrix, caramel_dark, "caramel_dark_contrast.png", "Caramel Dark")
+# Save images of contrast matrices with respective backgrounds
+save_contrast_matrix_image(
+    light_contrast_matrix, caramel_light, "caramel_light_contrast.png", "Caramel Light", caramel_light["White"]
+)
+save_contrast_matrix_image(
+    dark_contrast_matrix, caramel_dark, "caramel_dark_contrast.png", "Caramel Dark", caramel_dark["Black"]
+)
 
 # Extract contrast pairs and save to CSV
 thresholds = [7, 4.5, 3.1]
