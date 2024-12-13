@@ -21,7 +21,7 @@ caramel_light = {
 }
 
 caramel_dark = {
-    "Black": "#2B1B17",
+    "Black": "#353232",
     "Red": "#C06D57",
     "Green": "#9AA86C",
     "Yellow": "#D6A259",

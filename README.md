@@ -2,10 +2,8 @@
 
 The Caramel repository hosts a meticulously designed color scheme that draws inspiration from warm, earthy tones. It combines soft, muted accents with harmonious contrasts to create a visually appealing and functional palette for diverse applications. The Caramel color scheme is thoughtfully designed to align with WCAG (Web Content Accessibility Guidelines) standards, ensuring optimal readability and usability. By analyzing contrast ratios, the theme prioritizes accessibility, making it suitable for users with visual impairments and environments with varying lighting conditions. The theme includes both light and dark variants, making it ideal for various applications that demand readability, aesthetics, and accessibility.
 
-## Visual Palette
-
-  ![Caramel Stacked Palette](palette/stacked-palettes.png)
-
+## Palette
+[]
 ## Repository Structure
 
 ```
