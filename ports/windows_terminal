@@ -1,0 +1,50 @@
+{
+    "schemes": [
+        {
+            "background": "#353232",
+            "black": "#353232",
+            "blue": "#7998A9",
+            "brightBlack": "#5E4B42",
+            "brightBlue": "#9FB4C2",
+            "brightCyan": "#76ADA9",
+            "brightGreen": "#AEB87E",
+            "brightPurple": "#BC8994",
+            "brightRed": "#CF846D",
+            "brightWhite": "#E9DED3",
+            "brightYellow": "#E6B97D",
+            "cursorColor": "#9AA86C",
+            "cyan": "#5C9B9A",
+            "foreground": "#D4C7BD",
+            "green": "#9AA86C",
+            "name": "Caramel Dark",
+            "purple": "#AB6B76",
+            "red": "#C06D57",
+            "selectionBackground": "#FFFFFF",
+            "white": "#D4C7BD",
+            "yellow": "#D6A259"
+        },
+        {
+            "background": "#F5F0E6",
+            "black": "#3B302C",
+            "blue": "#89A5C7",
+            "brightBlack": "#6D5E55",
+            "brightBlue": "#A3BDD3",
+            "brightCyan": "#8ABBB8",
+            "brightGreen": "#98B27D",
+            "brightPurple": "#C79DA6",
+            "brightRed": "#D3756D",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#E2BC76",
+            "cursorColor": "#7C9A62",
+            "cyan": "#6CA9A6",
+            "foreground": "#3B302C",
+            "green": "#7C9A62",
+            "name": "Caramel Light",
+            "purple": "#B58696",
+            "red": "#C85A54",
+            "selectionBackground": "#FFFFFF",
+            "white": "#F5F0E6",
+            "yellow": "#D6AA5A"
+        }
+    ]
+}
